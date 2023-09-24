@@ -6,13 +6,20 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     public Transform spawnbullet;
+    public LogicCanyon infoBullet;
 
     public float shootForce = 1500;
     public float shootRate = 0.5f;
     private float shootRatetime = 0;
 
 
-    // Update is called once per frame
+    public void ShootBallet()
+    {
+        GameObject bulletCannon = bullet;
+        bulletCannon.GetComponent<Rigidbody>().mass = infoBullet.bulletWeight;
+        bulletCannon.GetComponent<Bullet>().speed = infoBullet.forceCannon;
+        Instantiate(bulletCannon, spawnbullet.position, spawnbullet.rotation);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
