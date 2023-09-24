@@ -8,11 +8,6 @@ public class Shoot : MonoBehaviour
     public Transform spawnbullet;
     public LogicCanyon infoBullet;
 
-    public float shootForce = 1500;
-    public float shootRate = 0.5f;
-    private float shootRatetime = 0;
-
-
     public void ShootBallet()
     {
         GameObject bulletCannon = bullet;
@@ -20,23 +15,8 @@ public class Shoot : MonoBehaviour
         bulletCannon.GetComponent<Bullet>().speed = infoBullet.forceCannon;
         Instantiate(bulletCannon, spawnbullet.position, spawnbullet.rotation);
     }
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (Time.time > shootRatetime)
-            {
-                GameObject newbullet;
-
-                newbullet = Instantiate(bullet, spawnbullet.position, spawnbullet.rotation);
-
-                newbullet.GetComponent<Rigidbody>().AddForce(spawnbullet.forward * shootForce);
-
-                shootRatetime = Time.time + shootRate;
-
-                Destroy(newbullet, 3);
-
-            }
-        }
+        ShootBallet();
     }
 }

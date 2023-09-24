@@ -15,27 +15,28 @@ public class LogicCanyon : MonoBehaviour
 
     private void Start()
     {
-        BarrelRotationX(0f);
-        BarrelRotationY(0f);
-        CannonBallWeight(0f);
+        RotationX(0f);
+        RotationY(0f);
+        BulletWeight(0f);
         CannonForce(0f);
     }
 
-    public void BarrelRotationX(float rotationX)
+    public void RotationX(float rotationX)
     {
         Cannon.transform.localEulerAngles = new Vector3(Cannon.transform.localEulerAngles.x, rotationX, Cannon.transform.localEulerAngles.z);
         EjeXText.text = rotationX.ToString() + "°";
     }
 
-    public void BarrelRotationY(float rotationY)
+    public void RotationY(float rotationY)
     {
         Cannon.transform.localEulerAngles = new Vector3(-rotationY, Cannon.transform.localEulerAngles.y, Cannon.transform.localEulerAngles.z);
         EjeYText.text = rotationY.ToString() + "°";
+        Debug.Log("rot: " + rotationY + "euler:" + Cannon.transform.localEulerAngles.y);
     }
 
-    public void CannonBallWeight(float weight)
+    public void BulletWeight(float weight)
     {
-        bulletWeight = weight * 0.2f + 8;
+        bulletWeight = weight * 0.4f + 8;
         WeightText.text = bulletWeight.ToString() + " kg";
     }
 
