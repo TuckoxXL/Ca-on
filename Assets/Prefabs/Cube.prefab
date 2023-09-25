@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 6461967261824602013}
   - component: {fileID: 6461967261824602012}
   - component: {fileID: 6461967261824601985}
+  - component: {fileID: -2666527680287205813}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Caja
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,9 +125,21 @@ FixedJoint:
   m_GameObject: {fileID: 6461967261824602014}
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: 2
-  m_BreakTorque: 1
+  m_BreakForce: 100
+  m_BreakTorque: 100
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &-2666527680287205813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461967261824602014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaddbcce2a9208e4eb50dd3b0fc472c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

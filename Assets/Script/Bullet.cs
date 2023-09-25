@@ -6,11 +6,13 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.AddRelativeForce(0f, 0f, speed, ForceMode.Impulse);
-        Invoke("DestroyBall", 15f);
+        Invoke("DestroyBullet", 10f);
+        
     }
 
     public void Weight(float weight)
